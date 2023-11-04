@@ -4,10 +4,15 @@ import Field, { FIELD_TYPES } from "../../components/Field";
 import Select from "../../components/Select";
 import Button, { BUTTON_TYPES } from "../../components/Button";
 
-const mockContactApi = () => new Promise((resolve) => { setTimeout(resolve, 1000); })
+const mockContactApi = () =>
+  new Promise((resolve) => {
+    setTimeout(resolve, 900);
+  });
 
 const Form = ({ onSuccess, onError }) => {
   const [sending, setSending] = useState(false);
+  const [confirmationSent, setConfirmationSent] = useState(false); // Nouvel état pour le message de confirmation
+
   const sendContact = useCallback(
     async (evt) => {
       evt.preventDefault();
@@ -16,13 +21,16 @@ const Form = ({ onSuccess, onError }) => {
       try {
         await mockContactApi();
         setSending(false);
+        setConfirmationSent(true); // Marquer le message de confirmation comme envoyé
+        onSuccess(); // Appeler la fonction onSuccess lorsque le message est envoyé avec succès
       } catch (err) {
         setSending(false);
         onError(err);
       }
     },
-    [onSuccess, onError]
+    [onError, onSuccess]
   );
+
   return (
     <form onSubmit={sendContact}>
       <div className="row">
@@ -40,6 +48,8 @@ const Form = ({ onSuccess, onError }) => {
           <Button type={BUTTON_TYPES.SUBMIT} disabled={sending}>
             {sending ? "En cours" : "Envoyer"}
           </Button>
+          {confirmationSent && <div className=""> Message envoyé !</div>}{" "}
+          {/* Afficher le message de confirmation */}
         </div>
         <div className="col">
           <Field
@@ -56,11 +66,11 @@ const Form = ({ onSuccess, onError }) => {
 Form.propTypes = {
   onError: PropTypes.func,
   onSuccess: PropTypes.func,
-}
+};
 
 Form.defaultProps = {
   onError: () => null,
   onSuccess: () => null,
-}
+};
 
 export default Form;

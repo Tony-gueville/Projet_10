@@ -17,6 +17,7 @@ const data = {
       date: "2022-03-29T20:28:45.744Z",
       cover: "/images/evangeline-shaw-nwLTVwb7DbU-unsplash1.png",
     },
+
     {
       title: "World Farming Day",
       description: "Evenement mondial autour de la ferme",

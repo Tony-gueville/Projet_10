@@ -1,0 +1,5 @@
+correction des test
+effectuer des commits
+lister ce qu'on fait sur les projets
+noter en commentaire les modiffications
+ajouter du versionning

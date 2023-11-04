@@ -5,13 +5,21 @@
   width: 363px;
   height: 336px;
   cursor: pointer;
+  
   &--small {
     width: 274px;
     height: 190px;
+    margin: 0;
+        padding: 0;
     .EventCard__imageContainer {
       height: 126px;
       min-height: auto;
       overflow: hidden;
+  
+      img{
+        width: 100%;
+        object-fit: cover;
+      }
     }
     .EventCard__descriptionContainer {
       padding: 0;
@@ -60,7 +68,7 @@
     flex-direction: column;
     align-items: flex-start;
     font-weight: 400;
-    padding: 30px;
+    padding: 20px;
     width: 80%;
   }
   &__title {

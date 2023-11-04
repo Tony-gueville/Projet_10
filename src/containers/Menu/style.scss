@@ -21,10 +21,15 @@ nav {
       list-style: none;
       margin: 40px;
       padding: 0;
+    
       a {
         text-decoration: none;
         color: $black;
       }
+    }
+    a:hover{
+      color: $primary;
+      border-bottom: $primary 2px solid;
     }
     padding-right: 50px;
   }
