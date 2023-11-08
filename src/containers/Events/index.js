@@ -14,11 +14,15 @@ const EventList = () => {
   const [type, setType] = useState();
   const [currentPage, setCurrentPage] = useState(1);
 
+  // parti modifier *****
+
   const filteredEvents = (
     (!type
       ? data?.events
       : data?.events.filter((event) => event.type === type)) || []
   ).slice((currentPage - 1) * PER_PAGE, currentPage * PER_PAGE);
+
+  // ***********
 
   const changeType = (evtType) => {
     setCurrentPage(1);

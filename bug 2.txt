@@ -1,0 +1,13 @@
+preparer la diference text unitaire et text intégration 
+
+2 : tcheck toute les différence sur le code , fichier js
+
+3 :comprendre pourquoi avoir modifier le code 
+
+4 : timer de 1000 à 900 comprendre 
+
+5 : chaque modification / pourquoi pour la présentation 
+
+améliorer le cahier de recette 
+
+https://www.diffchecker.com/text-compare/

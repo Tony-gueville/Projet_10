@@ -7,7 +7,7 @@ import "./style.scss";
 const Slider = () => {
   const { data } = useData();
   const [activeIndex, setActiveIndex] = useState(0);
-
+  // Modifier le urse effect *****
   useEffect(() => {
     if (data && data.focus && data.focus.length > 0) {
       const interval = setInterval(() => {
@@ -32,7 +32,7 @@ const Slider = () => {
   };
 
   const reversedFocus = [...data.focus].reverse(); // Inverser l'ordre des éléments
-
+  // **********************
   return (
     <div className="SlideCardList">
       {reversedFocus.map((event, idx) => (
@@ -54,6 +54,7 @@ const Slider = () => {
           <div className="SlideCard__paginationContainer">
             <div className="SlideCard__pagination">
               {reversedFocus.map((_, radioIdx) => (
+                // modif de l'input ***********
                 <input
                   key={`dot-${radioIdx}`}
                   type="checkbox"
@@ -63,6 +64,7 @@ const Slider = () => {
                   checked={activeIndex === radioIdx}
                   onChange={handleDotClick}
                 />
+                // ****************************
               ))}
             </div>
           </div>
